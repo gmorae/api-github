@@ -34,6 +34,7 @@ class App extends React.Component {
 
     !name ? console.log('digite algo') : this.state.users.push(name)
     
+    
     this.get()
   }
 
