@@ -17,8 +17,12 @@ class Card extends Component {
             borderTopRightRadius: '.25rem',
             backgroundColor: '#002'
         }
+
+        const button = {
+            borderRadius: '50px'
+        }
         return (
-            <div className="col-lg-4 col-md-12 mb-4">
+            <div className="col-lg-4 col-md-12 mb-4" id={this.props.id}>
                 <div className="card testimonial-card">
                     <div style={cardUpStyle}></div>
                     <div style={AvatarStyle} className="mx-auto white">
@@ -28,11 +32,13 @@ class Card extends Component {
                         <h4 className="font-weight-bold mb-4">{this.props.name}</h4>
                         <hr />
                         <p className="dark-grey-text mt-4">{this.props.bio}</p>
-                        <div>
-                            <a className="dark-grey-text" href={`https://github.com/${this.props.url}`} target="_blanck">
-                                <i class="fab fa-github mr-2"></i>
+                        <div className="d-flex justify-content-around">
+                            <a className="dark-grey-text" href={this.props.url} target="_blanck">
+                                <i className="fab fa-github mr-2"></i>
                                 Perfil
                             </a>
+                        <button type="button" style={button} onClick={this.props.delete} className="btn btn-danger btn-sm btn-rounded"><i className="fas fa-times pr-2 pt-1"
+                            aria-hidden="true"></i>Excluir</button>
                         </div>
                     </div>
                 </div>
